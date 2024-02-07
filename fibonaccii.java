@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class fibonaccii {
 
     static int fibonacci(int n) {
@@ -9,13 +11,24 @@ public class fibonaccii {
     }
 
     public static void main(String[] args) {
-        int givenNumber = 100;
-
-        System.out.println("Fibonacci Series up to " + givenNumber + ":");
-
-        for (int i = 0; fibonacci(i) <= givenNumber; i++) {
-            System.out.print(fibonacci(i) + " ");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("enter ur range");
+        int n = scanner.nextInt();
+        int[] marks = new int[n];
+        System.out.println("Fibonacci Series up to " + n + ":");
+        for (int i = 0; fibonacci(i) <= n; i++) {
+            System.out.print(fibonacci(i) + "\t");
         }
+        for (int i = 0; fibonacci(i) <= marks.length; i++) {
+            marks[i] = fibonacci(i);
+
+        }
+        int nth;
+        System.out.print("\n enter the nth term u want btw 0 - " + n);
+        nth = scanner.nextInt();
+        System.out.print(marks[nth] + "\t");
+        scanner.close();
+
     }
 
 }
